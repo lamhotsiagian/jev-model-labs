@@ -12,6 +12,11 @@ for building decision systems on TypeSafe's Jev System One model.
 > number printed under the simulator is labelled `SIMULATED`. Set
 > `JEV_BACKEND=http` and `TYPESAFE_API_KEY` to measure the real model.
 
+<img width="1241" height="1754" alt="jev-prev_page-0001" src="https://github.com/user-attachments/assets/d6859a72-8b61-4b8c-a2e7-8f7a31ef0b7a" />
+
+preview: https://drive.google.com/file/d/1NsGSt--MJQwDnU-nXA7IG-VVtn6Rev_G/view
+
+book link: https://shop.beacons.ai/aiengineeringinsider/98bafdb3-a49d-4d7e-80d1-1255f03438af
 ## Quick start
 
 ```bash
