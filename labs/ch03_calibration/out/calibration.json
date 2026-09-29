@@ -1,0 +1,99 @@
+{
+  "backend": "SIMULATED",
+  "n": 400,
+  "accuracy": 0.755,
+  "brier": 0.3322,
+  "ece_top_probability": 0.1804,
+  "measures": {
+    "peakedness": {
+      "auroc": 0.8641,
+      "ece": 0.2283
+    },
+    "top2_margin": {
+      "auroc": 0.8686,
+      "ece": 0.2698
+    },
+    "entropy": {
+      "auroc": 0.8553,
+      "ece": 0.4
+    }
+  },
+  "recommendation": {
+    "threshold": 0.8,
+    "automation": 0.2525,
+    "error_rate": 0.04950495049504951,
+    "n_acted": 101
+  },
+  "recommendation_wilson": {
+    "0.05": null,
+    "0.1": {
+      "threshold": 0.78,
+      "automation": 0.2975,
+      "n_acted": 119,
+      "error_rate": 0.05042016806722689,
+      "error_upper_95": 0.09454012918857603
+    }
+  },
+  "recalibration": {
+    "ece_raw_peakedness_holdout": 0.2342,
+    "ece_isotonic_holdout": 0.0275
+  },
+  "reliability": [
+    {
+      "lo": 0.2,
+      "hi": 0.30000000000000004,
+      "n": 75,
+      "mean_conf": 0.2770993766043271,
+      "accuracy": 0.09333333333333334
+    },
+    {
+      "lo": 0.30000000000000004,
+      "hi": 0.4,
+      "n": 1,
+      "mean_conf": 0.31313131313131315,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.5,
+      "n": 14,
+      "mean_conf": 0.44864822196505355,
+      "accuracy": 0.7857142857142857
+    },
+    {
+      "lo": 0.5,
+      "hi": 0.6000000000000001,
+      "n": 76,
+      "mean_conf": 0.5523828435475128,
+      "accuracy": 0.9210526315789473
+    },
+    {
+      "lo": 0.6000000000000001,
+      "hi": 0.7000000000000001,
+      "n": 51,
+      "mean_conf": 0.6337180384705138,
+      "accuracy": 0.8627450980392157
+    },
+    {
+      "lo": 0.7000000000000001,
+      "hi": 0.8,
+      "n": 60,
+      "mean_conf": 0.7547127046037936,
+      "accuracy": 0.9166666666666666
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.9,
+      "n": 43,
+      "mean_conf": 0.8586195131141021,
+      "accuracy": 0.8837209302325582
+    },
+    {
+      "lo": 0.9,
+      "hi": 1.0,
+      "n": 80,
+      "mean_conf": 0.9266837058705871,
+      "accuracy": 0.9625
+    }
+  ]
+}

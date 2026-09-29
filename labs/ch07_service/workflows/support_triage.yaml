@@ -1,0 +1,9 @@
+# Workflow = registry (what to ask) + policy (what to do) + bindings (which answer drives which action).
+workflow: support_triage
+registry: labs/ch04_state/questions.yaml
+policy: labs/ch05_policy/policy.yaml
+state_fields: [plan, customer_message]      # serializer allow-list
+bindings:
+  department: assign_queue
+  checkout_outage: page_oncall
+  refund_requested: offer_refund

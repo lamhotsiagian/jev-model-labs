@@ -1,0 +1,16 @@
+{
+  "gate": {
+    "pass": false,
+    "acc_old": 0.7533,
+    "acc_new": 0.73,
+    "right_to_wrong": 7,
+    "wrong_to_right": 0,
+    "n": 300,
+    "reason": "accuracy regression exceeds budget"
+  },
+  "calibration": {
+    "week1_ece": 0.188,
+    "week2_ece": 0.207,
+    "week2_accuracy": 0.547
+  }
+}

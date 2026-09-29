@@ -1,0 +1,4 @@
+1. guardrail: {'route': 'product_support', 'conf': 0.59, 'human': 0.25}
+2. passages kept: ['kb1', 'kb3']
+3. SUPPORTED p=1.00 :: Duplicate charges are refunded within 5 business days.
+3. UNSUPPORTED -> strip or regenerate p=0.11 :: You will also receive a 20 percent loyalty credit.

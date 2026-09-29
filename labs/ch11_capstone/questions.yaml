@@ -1,0 +1,104 @@
+# Capstone registry: 15 atomic questions, fanned out in ONE call per ticket.
+workflow: support_ops
+questions:
+- id: department
+  type: choice
+  version: 3
+  owner: support-ops
+  instructions: Which team should handle this ticket?
+  criteria:
+    billing: Charges, invoices, refunds, payment methods
+    technical: Bugs, errors, outages, integrations, API problems
+    sales: Pricing, upgrades, plans, new accounts, quotes
+    account: Login, password, profile, account access, security settings
+  changelog:
+  - 'v2: added ''account'' split out of ''technical'''
+  - 'v3: option descriptions list concrete nouns, not adjectives'
+- id: checkout_outage
+  type: noul
+  version: 2
+  owner: payments-oncall
+  instructions: Is checkout unavailable to multiple customers?
+  criteria:
+    'true': The ticket reports checkout down, unavailable or failing for more than one customer
+    'false': A single customer's problem, or not about checkout availability
+  changelog:
+  - 'v2: narrowed from ''Is this urgent?'' which mixed severity, tone and deadlines'
+- id: refund_requested
+  type: noul
+  version: 1
+  owner: billing-team
+  instructions: Does the customer ask for money back?
+  criteria:
+    'true': Explicitly requests a refund, reversal or chargeback
+    'false': No request for money back
+- id: frustration
+  type: score
+  version: 1
+  owner: cx-quality
+  instructions: How frustrated is the customer?
+  criteria:
+  - Calm and polite
+  - Frustrated or impatient
+  - Very angry or threatening to cancel
+- id: churn_threat
+  type: noul
+  version: 1
+  owner: cx-quality
+  instructions: Does the customer say they will cancel or leave?
+  criteria:
+    'true': States intent to cancel, leave, or switch vendors
+    'false': No cancellation intent stated
+- id: mentions_order
+  type: noul
+  version: 1
+  owner: support-ops
+  instructions: Does the ticket reference a specific order ID?
+- id: login_problem
+  type: noul
+  version: 1
+  owner: identity-team
+  instructions: Is the customer unable to login or access their account?
+- id: pricing_question
+  type: noul
+  version: 1
+  owner: sales-ops
+  instructions: Is the customer asking about pricing, plans or quotes?
+- id: api_error
+  type: noul
+  version: 1
+  owner: platform-team
+  instructions: Does the ticket report an API error, integration failure or webhook failure?
+- id: duplicate_charge
+  type: noul
+  version: 1
+  owner: billing-team
+  instructions: Does the customer report being charged twice for the same thing?
+- id: security_concern
+  type: noul
+  version: 1
+  owner: security
+  instructions: Does the ticket describe lost access, account lockout, or a security setting change?
+- id: upgrade_intent
+  type: noul
+  version: 1
+  owner: sales-ops
+  instructions: Does the customer want to upgrade or add seats?
+- id: wants_status_update
+  type: noul
+  version: 1
+  owner: support-ops
+  instructions: Is the customer asking for a status update on an existing request?
+- id: export_problem
+  type: noul
+  version: 1
+  owner: platform-team
+  instructions: Does the ticket report an export or report job failing or timing out?
+- id: invoice_dispute
+  type: noul
+  version: 1
+  owner: billing-team
+  instructions: Does the customer dispute an invoice amount?
+  criteria:
+    'true': Says the invoice amount is wrong or disputes it
+    'false': No invoice dispute

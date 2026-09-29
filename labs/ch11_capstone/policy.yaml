@@ -1,0 +1,9 @@
+version: capstone-1
+actions:
+  assign_queue:      {act_at: 0.70, confirm_at: 0.45, signal: confidence, cost_false_positive: 3.0,  cost_escalation: 1.0}
+  page_oncall:       {act_at: 0.60, confirm_at: 0.35, signal: p_true,     cost_false_positive: 15.0, cost_escalation: 6.0}
+  offer_refund:      {act_at: 0.90, confirm_at: 0.60, signal: p_true,     cost_false_positive: 25.0, cost_escalation: 3.0}
+  send_draft_reply:  {act_at: 0.60, confirm_at: 0.30, signal: confidence, cost_false_positive: 10.0, cost_escalation: 4.0}
+  flag_churn_risk:   {act_at: 0.50,                   signal: p_true,     cost_false_positive: 0.5,  cost_escalation: 0.25}
+composites:
+  priority: {frustration: 0.35, churn_threat: 0.40, checkout_outage: 0.25}

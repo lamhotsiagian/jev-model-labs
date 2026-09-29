@@ -1,0 +1,41 @@
+{
+  "model": "jev-1.13.0-sim",
+  "answers": {
+    "department": {
+      "type": "choice",
+      "choice": "billing",
+      "probabilities": {
+        "billing": 0.81,
+        "technical": 0.06,
+        "sales": 0.04,
+        "account": 0.04,
+        "other": 0.05
+      },
+      "confidence": 0.76
+    },
+    "refund_requested": {
+      "type": "noul",
+      "noul": 0.72
+    },
+    "frustration": {
+      "type": "score",
+      "score": 1.0,
+      "legend": {
+        "0": "Calm and polite",
+        "1": "Frustrated or impatient",
+        "2": "Very angry or threatening to cancel"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.88,
+        "2": 0.06
+      },
+      "confidence": 0.82
+    }
+  },
+  "usage": {
+    "input_tokens": 196,
+    "output_tokens": 13
+  },
+  "_sim_latency_ms": 59.3
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Jev Decision Service",
+  "uid": "jev-decisions",
+  "schemaVersion": 39,
+  "tags": ["jev", "decisions"],
+  "templating": {"list": [{"name": "workflow", "type": "query", "query": "label_values(jev_decisions_total, workflow)"},
+                          {"name": "question", "type": "query", "query": "label_values(jev_decisions_total{workflow=\"$workflow\"}, question)"}]},
+  "panels": [
+    {"title": "Decisions per minute by outcome", "type": "timeseries",
+     "targets": [{"expr": "sum by (outcome) (rate(jev_decisions_total{workflow=\"$workflow\"}[5m])) * 60"}]},
+    {"title": "Escalation rate per question", "type": "timeseries",
+     "targets": [{"expr": "sum by (question) (rate(jev_decisions_total{outcome!=\"act\",workflow=\"$workflow\"}[1h])) / sum by (question) (rate(jev_decisions_total{workflow=\"$workflow\"}[1h]))"}]},
+    {"title": "Confidence distribution (p50 / p10)", "type": "timeseries",
+     "targets": [{"expr": "histogram_quantile(0.5, sum by (le) (rate(jev_confidence_bucket{question=\"$question\"}[1h])))"},
+                 {"expr": "histogram_quantile(0.1, sum by (le) (rate(jev_confidence_bucket{question=\"$question\"}[1h])))"}]},
+    {"title": "PSI vs baseline (daily job)", "type": "stat",
+     "targets": [{"expr": "jev_psi{question=\"$question\"}"}],
+     "fieldConfig": {"defaults": {"thresholds": {"steps": [{"color": "green", "value": 0}, {"color": "orange", "value": 0.1}, {"color": "red", "value": 0.25}]}}}},
+    {"title": "Latency p50 / p95 / p99 (ms)", "type": "timeseries",
+     "targets": [{"expr": "histogram_quantile(0.95, sum by (le) (rate(jev_latency_ms_bucket[5m])))"}]},
+    {"title": "Input tokens per decision & daily cost", "type": "timeseries",
+     "targets": [{"expr": "sum(rate(jev_input_tokens_total[1d])) * 86400 / 1e6 * 0.042"}]},
+    {"title": "Model version in use", "type": "table",
+     "targets": [{"expr": "count by (model_version) (jev_decisions_total)"}]},
+    {"title": "Audit disagreement rate (weekly)", "type": "stat",
+     "targets": [{"expr": "jev_audit_disagreement_ratio"}]},
+    {"title": "Fallbacks and retries", "type": "timeseries",
+     "targets": [{"expr": "rate(jev_fallbacks_total[5m])"}, {"expr": "rate(jev_retries_total[5m])"}]}
+  ]
+}

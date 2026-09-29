@@ -1,0 +1,16 @@
+P1 n=  1  median=   97.5 ms  usage={'input_tokens': 1166, 'output_tokens': 1}
+P1 n=  5  median=   98.0 ms  usage={'input_tokens': 1226, 'output_tokens': 5}
+P1 n= 10  median=   97.8 ms  usage={'input_tokens': 1301, 'output_tokens': 10}
+P1 n= 25  median=  101.7 ms  usage={'input_tokens': 1541, 'output_tokens': 25}
+P1 n= 50  median=  115.9 ms  usage={'input_tokens': 1941, 'output_tokens': 50}
+P2 {'noul_alone': 0.21, 'noul_with_20': 0.21, 'noul_diff': 0.0, 'choice_max_abs_diff': 0.0, 'isolated': True}
+P3 x1   tokens=  1301  median=   97.8 ms
+P3 x2   tokens=  2446  median=  129.2 ms
+P3 x4   tokens=  4738  median=  193.0 ms
+P3 x8   tokens=  9321  median=  322.2 ms
+P3 x16  tokens= 18487  median=  581.3 ms
+# Jev probe report (SIMULATED)
+
+* P1 latency 1 -> 50 questions: 97.5 -> 115.9 ms (1.19x for 50x the questions)
+* P2 isolation holds: True (max abs diff 0.0)
+* P3 latency 1301 -> 18487 tokens: 97.8 -> 581.3 ms

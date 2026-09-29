@@ -1,0 +1,19 @@
+== 1. extraction by candidates ==
+refund order extracted correctly: 38/40
+example: Good morning, please refund the duplicate charge Please refund order A-288. Order A-382 was fine. Appreciate it. 
+  -> SpanResult(value='A-288', raw='A-288', confidence=0.62, n_candidates=2)
+
+== 2. hierarchical classification with beam search ==
+  0.726  platform/webhooks/delivery_failure
+  0.068  identity/login/locked_out
+  0.062  identity/login/reset_email
+  0.015  platform/webhooks/signature_mismatch
+
+== 3. counting: one Noul per item ==
+{'count': 3, 'expected': 2.8, 'per_item': [0.53, 0.2, 0.93, 0.25, 0.66, 0.23]}
+
+== 4. pairwise reranking in one call ==
+  0.95 kb1 How to request a refund for a duplicate charge
+  0.68 kb3 Understanding invoice line items and refunds
+  0.21 kb4 Configuring webhook retries
+  0.12 kb2 Rotating your API key safely

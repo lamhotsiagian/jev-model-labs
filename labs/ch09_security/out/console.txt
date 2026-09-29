@@ -1,0 +1,13 @@
+== 1. no defence ==
+attack success: 149/150 = 99%
+
+== 2. defence in depth ==
+flagged: 150/150; hijacked AND auto-acted: 0
+
+== 3. cost of the defence on clean traffic ==
+clean tickets wrongly flagged by the scanner: 0/300
+
+== 4. unit economics (list prices; re-check the vendor page) ==
+Jev fan-out   : {'calls_per_day': 800000, 'input_tokens_per_day': 800000000, 'usd_per_day': 33.6, 'usd_per_1k_decisions': 0.0336}
+Jev sequential: {'calls_per_day': 12000000, 'input_tokens_per_day': 5280000000, 'usd_per_day': 221.76, 'usd_per_1k_decisions': 0.22176}
+LLM (illustrative $1/$4 per MTok): {'usd_per_day': 1424.0, 'usd_per_1k_decisions': 1.424}

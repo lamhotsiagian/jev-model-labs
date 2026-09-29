@@ -1,0 +1,37 @@
+REQUEST BODY
+{
+  "model": "jev-latest",
+  "state": "I was charged twice for order A-104. Please refund the duplicate. This is getting frustrating.",
+  "questions": {
+    "department": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds, payment methods",
+        "technical": "Bugs, errors, outages, integrations, API problems",
+        "sales": "Pricing, upgrades, plans, new accounts, quotes",
+        "account": "Login, password, profile, account access, security settings",
+        "other": null
+      }
+    },
+    "refund_requested": {
+      "type": "noul",
+      "instructions": "Does the customer ask for money back?",
+      "criteria": {
+        "true": "Explicitly requests a refund or reversal",
+        "false": "No request for money back"
+      }
+    },
+    "frustration": {
+      "type": "score",
+       ...
+
+department        ChoiceAnswer ChoiceAnswer(meta=Meta(question_id='department', model_version='jev-1.13.0-sim', input_tokens=196, output_tokens=13, latency_ms=59.3), choice='billing', probabilities={'billing': 0.8099999999999998, 'technical': 0.059999999999999984, 'sales': 0.039999999999999994, 'account': 0.039999999999999994, 'other': 0.04999999999999999}, confidence=0.76, raw_probabilities={'billing': 0.81, 'technical': 0.06, 'sales': 0.04, 'account': 0.04, 'other': 0.05})
+refund_requested  NoulAnswer   NoulAnswer(meta=Meta(question_id='refund_requested', model_version='jev-1.13.0-sim', input_tokens=196, output_tokens=13, latency_ms=59.3), p_true=0.72)
+frustration       ScoreAnswer  ScoreAnswer(meta=Meta(question_id='frustration', model_version='jev-1.13.0-sim', input_tokens=196, output_tokens=13, latency_ms=59.3), score=1.0, legend={0: 'Calm and polite', 1: 'Frustrated or impatient', 2: 'Very angry or threatening to cancel'}, probabilities={'0': 0.06, '1': 0.88, '2': 0.06}, confidence=0.82)
+
+raw sum = 1.00  normalized sum = 1.000000
+rubric lint: OK
+reversed rubric lint: ["level 'Frustrated or impatient' is less severe than its predecessor", "level 'Calm and polite' is less severe than its predecessor"]
+
+DOMAIN VIEW: TriageView(team='billing', team_confidence=0.76, wants_refund_p=0.72, frustration_0_1=0.5, model_version='jev-1.13.0-sim', input_tokens=196)

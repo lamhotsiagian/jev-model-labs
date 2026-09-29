@@ -1,0 +1,77 @@
+{
+  "request": {
+    "model": "jev-latest",
+    "state": "I was charged twice for order A-104. Please refund the duplicate. This is getting frustrating.",
+    "questions": {
+      "department": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Charges, invoices, refunds, payment methods",
+          "technical": "Bugs, errors, outages, integrations, API problems",
+          "sales": "Pricing, upgrades, plans, new accounts, quotes",
+          "account": "Login, password, profile, account access, security settings",
+          "other": null
+        }
+      },
+      "refund_requested": {
+        "type": "noul",
+        "instructions": "Does the customer ask for money back?",
+        "criteria": {
+          "true": "Explicitly requests a refund or reversal",
+          "false": "No request for money back"
+        }
+      },
+      "frustration": {
+        "type": "score",
+        "instructions": "How frustrated is the customer?",
+        "criteria": [
+          "Calm and polite",
+          "Frustrated or impatient",
+          "Very angry or threatening to cancel"
+        ]
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0-sim",
+    "answers": {
+      "department": {
+        "type": "choice",
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.81,
+          "technical": 0.06,
+          "sales": 0.04,
+          "account": 0.04,
+          "other": 0.05
+        },
+        "confidence": 0.76
+      },
+      "refund_requested": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "frustration": {
+        "type": "score",
+        "score": 1.0,
+        "legend": {
+          "0": "Calm and polite",
+          "1": "Frustrated or impatient",
+          "2": "Very angry or threatening to cancel"
+        },
+        "probabilities": {
+          "0": 0.06,
+          "1": 0.88,
+          "2": 0.06
+        },
+        "confidence": 0.82
+      }
+    },
+    "usage": {
+      "input_tokens": 196,
+      "output_tokens": 13
+    },
+    "_sim_latency_ms": 59.3
+  }
+}

@@ -1,0 +1,20 @@
+--- serialize_row (allow-listed) ---
+plan: starter
+message: Hello, is there a discount on the annual plan This is unacceptable and I am very angry.
+--- serialize_events ---
+events (oldest first):
+[-42m] deploy: checkout-svc v412
+[-31m] alert: 5xx rate 7%
+[-18m] ticket: checkout error x3
+[-2m] rollback: checkout-svc v411
+--- serialize_chunk ---
+document: MSA-2291
+section: 12. Termination
+chunk: 8 of 31
+---
+The supplier may terminate on 30 days notice...
+B: {"prose_full_row": {"accuracy": 0.487, "avg_input_tokens": 147}, "kv_allow_listed": {"accuracy": 0.743, "avg_input_tokens": 112}}
+C: {"holistic": {"accuracy": 0.735, "recall_on_priority": 0.085, "consistency_5_runs": 0.67}, "atomic": {"accuracy": 0.905, "recall_on_priority": 0.787, "consistency_5_runs": 1.0}}
+D: registry support_triage fingerprint 9f683492bf40 questions 12
+   lint: clean
+   lint of a deliberately bad question: ['urgent: vague adjective in instructions; split into atomic questions', "urgent: Noul with 'and' may be two judgments in one"]

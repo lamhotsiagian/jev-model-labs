@@ -1,0 +1,35 @@
+{
+  "tickets": 200,
+  "questions_per_call": 16,
+  "actions": {
+    "assign_queue": {
+      "act": 74,
+      "escalate": 83,
+      "confirm": 43
+    },
+    "page_oncall": {
+      "escalate": 171,
+      "act": 29
+    },
+    "offer_refund": {
+      "escalate": 165,
+      "act": 28,
+      "confirm": 7
+    },
+    "flag_churn_risk": {
+      "act": 13,
+      "escalate": 187
+    },
+    "send_draft_reply": {
+      "escalate": 154,
+      "act": 46
+    }
+  },
+  "resolved_without_human": 0.23,
+  "refund_orders_extracted": 20,
+  "refund_order_correct": 20,
+  "replies_sent": 46,
+  "flagged_suspicious": 0,
+  "decision_log_lines": 800,
+  "backend": "SIMULATED"
+}

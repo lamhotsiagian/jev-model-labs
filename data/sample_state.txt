@@ -1,0 +1,41 @@
+Support queue export (last hour)
+T0000: Hey support, the dashboard crashes with a bug also is locked after login attempts Please fix this soon.
+T0001: Hello, the export job times out with an error Related order: A-506. This is unacceptable and I am very angry.
+T0002: Hey support, webhooks are failing since the deploy Appreciate it.
+T0003: Hi team, can I get a quote for 200 users Related order: A-831. Absolutely furious, fix it now!
+T0004: Hello, please change the email on my profile also method was declined Related order: A-364. Absolutely furious, fix it now!
+T0005: Good morning, we are evaluating plans for a new team Related order: A-459. Thanks.
+T0006: Urgent: I need a refund for the annual invoice Please refund order A-815. Worst experience, I am angry and will cancel.
+T0007: why was my card charged again also the email on my profile Please refund order A-227. Appreciate it.
+T0008: Urgent: I was charged twice for my order Please refund order A-120. No rush.
+T0009: Hey support, I need a refund for the annual invoice Please refund order A-700. Order A-835 was fine. Please fix this soon.
+T0010: Hi team, checkout page shows an error and will not load also a refund for the annual invoice Related order: A-517. No rush.
+T0011: Urgent: my invoice shows the wrong amount Please refund order A-982. Appreciate it.
+T0012: Hey support, I need a refund for the annual invoice Please refund order A-408. Worst experience, I am angry and will cancel.
+T0013: Hi team, is there a discount on the annual plan Related order: A-120. Appreciate it.
+T0014: Hi team, the export job times out with an error Related order: A-723. Still waiting on this.
+T0015: Hey support, I was charged twice for my order Absolutely furious, fix it now!
+T0016: Urgent: how do I enable two factor security Related order: A-472. No rush.
+T0017: Urgent: is there a discount on the annual plan also a refund for the annual invoice Related order: A-417. Still waiting on this.
+T0018: Hello, can I get a quote for 200 users also job times out with an error No rush.
+T0019: Good morning, the integration stopped syncing also access to my account Checkout unavailable for several customers right now. Related order: A-377. This is getting frustrating.
+T0020: Urgent: the dashboard crashes with a bug also get a quote for 200 users Absolutely furious, fix it now!
+T0021: Good morning, checkout page shows an error and will not load Related order: A-454. No rush.
+T0022: Hi team, my account is locked after login attempts also method was declined Related order: A-622. Worst experience, I am angry and will cancel.
+T0023: the payment method was declined Please refund order A-395. Order A-656 was fine. Worst experience, I am angry and will cancel.
+T0024: Hello, I was charged twice for my order also I enable two factor security Please refund order A-540. Appreciate it.
+T0025: Hey support, checkout page shows an error and will not load Checkout unavailable for several customers right now. Related order: A-154. Thanks.
+T0026: Hi team, please change the email on my profile This is getting frustrating.
+T0027: Urgent: the integration stopped syncing Checkout unavailable for several customers right now. Related order: A-983. This is getting frustrating.
+T0028: Hi team, my account is locked after login attempts This is unacceptable and I am very angry.
+T0029: Hi team, I was charged twice for my order This is unacceptable and I am very angry.
+T0030: Urgent: the password reset email never arrives Related order: A-495. Still waiting on this.
+T0031: Urgent: we want to upgrade to more seats Related order: A-226. Still waiting on this.
+T0032: Hi team, how do I enable two factor security also failing since the deploy Related order: A-765. Thanks.
+T0033: Hi team, please change the email on my profile Related order: A-530. Absolutely furious, fix it now!
+T0034: Hello, please refund the duplicate charge Please refund order A-173. Order A-922 was fine. Thanks.
+T0035: Hey support, can I get a quote for 200 users also login to my account Related order: A-911. No rush.
+T0036: Hey support, why was my card charged again also stopped syncing Please refund order A-145. Order A-639 was fine. Still waiting on this.
+T0037: Hi team, checkout page shows an error and will not load Checkout is down for all our customers. Related order: A-956. Worst experience, I am angry and will cancel.
+T0038: Hi team, I need a refund for the annual invoice Please refund order A-209. This is unacceptable and I am very angry.
+T0039: Hey support, we want to upgrade to more seats Related order: A-284. Please fix this soon.

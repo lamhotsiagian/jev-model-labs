@@ -1,0 +1,42 @@
+peakedness vs returned confidence: {'n': 400, 'max_abs_err': 0.0033333333333334103, 'share_within_tol': 1.0}
+{
+  "backend": "SIMULATED",
+  "n": 400,
+  "accuracy": 0.755,
+  "brier": 0.3322,
+  "ece_top_probability": 0.1804,
+  "measures": {
+    "peakedness": {
+      "auroc": 0.8641,
+      "ece": 0.2283
+    },
+    "top2_margin": {
+      "auroc": 0.8686,
+      "ece": 0.2698
+    },
+    "entropy": {
+      "auroc": 0.8553,
+      "ece": 0.4
+    }
+  },
+  "recommendation": {
+    "threshold": 0.8,
+    "automation": 0.2525,
+    "error_rate": 0.04950495049504951,
+    "n_acted": 101
+  },
+  "recommendation_wilson": {
+    "0.05": null,
+    "0.1": {
+      "threshold": 0.78,
+      "automation": 0.2975,
+      "n_acted": 119,
+      "error_rate": 0.05042016806722689,
+      "error_upper_95": 0.09454012918857603
+    }
+  },
+  "recalibration": {
+    "ece_raw_peakedness_holdout": 0.2342,
+    "ece_isotonic_holdout": 0.0275
+  }
+}

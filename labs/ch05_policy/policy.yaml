@@ -1,0 +1,41 @@
+# Decision policy for the support workflow. Owned by the product team.
+# Thresholds are per ACTION and scale with what being wrong costs.
+# Changing a number here is a policy change: review it like code.
+version: 2026-09-28.1
+
+actions:
+  auto_close_ticket:          # customer-visible and hard to undo
+    act_at: 0.95
+    confirm_at: 0.80
+    signal: confidence
+    cost_false_positive: 40.0
+    cost_escalation: 2.0
+  assign_queue:               # internal, cheap to correct
+    act_at: 0.70
+    confirm_at: 0.45
+    signal: confidence
+    cost_false_positive: 3.0
+    cost_escalation: 1.0
+  tag_for_analytics:          # nearly free
+    act_at: 0.40
+    signal: confidence
+    cost_false_positive: 0.05
+    cost_escalation: 0.03
+  page_oncall:                # Noul: act on P(yes), not on confidence
+    act_at: 0.60
+    confirm_at: 0.35
+    signal: p_true
+    cost_false_positive: 15.0     # waking an engineer for nothing
+    cost_escalation: 6.0          # a triager confirms within minutes instead
+  offer_refund:
+    act_at: 0.90
+    confirm_at: 0.60
+    signal: p_true
+    cost_false_positive: 25.0
+    cost_escalation: 3.0
+
+composites:
+  priority:                   # weights live here, not in question text
+    frustration: 0.35
+    churn_threat: 0.40
+    checkout_outage: 0.25

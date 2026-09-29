@@ -1,0 +1,25 @@
+{
+  "B": {
+    "prose_full_row": {
+      "accuracy": 0.487,
+      "avg_input_tokens": 147
+    },
+    "kv_allow_listed": {
+      "accuracy": 0.743,
+      "avg_input_tokens": 112
+    }
+  },
+  "C": {
+    "holistic": {
+      "accuracy": 0.735,
+      "recall_on_priority": 0.085,
+      "consistency_5_runs": 0.67
+    },
+    "atomic": {
+      "accuracy": 0.905,
+      "recall_on_priority": 0.787,
+      "consistency_5_runs": 1.0
+    }
+  },
+  "lint": []
+}

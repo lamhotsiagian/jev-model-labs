@@ -1,0 +1,13 @@
+[project]
+name = "jevkit"
+version = "1.0.0"
+description = "Production toolkit and labs for building decision systems on TypeSafe Jev"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26", "pyyaml>=6.0", "httpx>=0.27"]
+
+[project.optional-dependencies]
+service = ["fastapi>=0.110", "uvicorn>=0.29", "pydantic>=2.6"]
+dev = ["pytest>=8.0", "matplotlib>=3.8"]
+
+[tool.setuptools]
+packages = ["jevkit"]

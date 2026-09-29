@@ -1,0 +1,22 @@
+== 1. golden-set upgrade gate ==
+{
+ "pass": false,
+ "acc_old": 0.7533,
+ "acc_new": 0.73,
+ "right_to_wrong": 7,
+ "wrong_to_right": 0,
+ "n": 300,
+ "reason": "accuracy regression exceeds budget"
+}
+-> upgrade BLOCKED: keep jev-1.13.0 pinned
+
+== 2-3. logging and drift ==
+{'question': 'checkout_outage', 'psi': 0.102, 'escalation_base': 0.843, 'escalation_now': 0.863, 'status': 'WATCH'}
+{'question': 'department', 'psi': 0.74, 'escalation_base': 0.583, 'escalation_now': 0.887, 'status': 'ALERT'}
+{'question': 'refund_requested', 'psi': 0.176, 'escalation_base': 0.863, 'escalation_now': 0.96, 'status': 'WATCH'}
+
+== 4. audit loop ==
+audited auto-acts: 15; disagreements to add to the labelled set: 0
+
+== 5. weekly calibration report ==
+{'week1_ece': 0.188, 'week2_ece': 0.207, 'week2_accuracy': 0.547}

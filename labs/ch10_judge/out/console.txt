@@ -1,0 +1,26 @@
+== 1-2. accuracy and reversal inconsistency by category ==
+ordinary         {'single_order_acc': 0.85, 'both_order_acc': 0.92, 'reversal_inconsistency': 0.25}
+evidence         {'single_order_acc': 1.0, 'both_order_acc': 1.0, 'reversal_inconsistency': 0.0}
+derivation       {'single_order_acc': 0.37, 'both_order_acc': 0.51, 'reversal_inconsistency': 0.55}
+elaborate_wrong  {'single_order_acc': 0.32, 'both_order_acc': 0.47, 'reversal_inconsistency': 0.36}
+
+== 3. accuracy by confidence q (both orders) ==
+{'bin': '[0.50,0.60)', 'n': 71, 'acc': 0.662}
+{'bin': '[0.60,0.70)', 'n': 60, 'acc': 0.9}
+{'bin': '[0.70,0.80)', 'n': 83, 'acc': 0.434}
+{'bin': '[0.80,0.90)', 'n': 78, 'acc': 0.846}
+{'bin': '[0.90,0.95)', 'n': 31, 'acc': 0.323}
+{'bin': '[0.95,1.00]', 'n': 77, 'acc': 1.0}
+error-detection AUROC of q: 0.584
+
+== 4-5. frozen cascade: fit tau on selection, re-check on held-out ==
+selection: {'tau': 0.8, 'n': 120, 'cascade_acc': 0.925, 'fallback_acc': 0.9417, 'escalation_rate': 0.5917, 'retained': 0.9823}
+held-out : {'tau': 0.8, 'n': 280, 'cascade_acc': 0.875, 'fallback_acc': 0.9679, 'escalation_rate': 0.5107, 'retained': 0.9041}
+fees     : {'jev_usd': 0.0032, 'fallback_usd': 1.742, 'cascade_usd': 1.7452, 'fallback_only_usd': 3.411, 'fee_ratio': 0.5117}
+
+== 6. where the fallback budget goes ==
+{'ordinary': '53% escalated', 'evidence': '0% escalated', 'derivation': '76% escalated', 'elaborate_wrong': '76% escalated'}
+accepted-but-wrong by category: {'derivation': 11, 'elaborate_wrong': 17}
+
+== 7. envelope-aware cascade: out-of-envelope workloads go straight to the fallback ==
+{'tau_in_envelope': 0.5, 'cascade_acc': 0.9607, 'fallback_acc': 0.9679, 'retained': 0.9926, 'escalation_rate': 0.5, 'fee_ratio': 0.5009}

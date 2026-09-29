@@ -1,0 +1,28 @@
+== 1. speculative fan-out ==
+fan-out   : 1 call,    490 input tokens,   73.1 ms
+sequential: 12 calls,   842 input tokens,  699.6 ms -> 1.7x tokens, 9.6x latency
+
+== 2. per-action gating over 200 tickets ==
+assign_queue       act= 71 confirm= 50 escalate= 79 wrong_acts=2
+auto_close_ticket  act=  4 confirm= 46 escalate=150 wrong_acts=0
+page_oncall        act= 17 confirm=  0 escalate=183 wrong_acts=8
+
+== 3. composite priority (weights from YAML) ==
+T0000 priority=0.52  | Good morning, the export job times out with an error Checkout is down 
+T0001 priority=0.66  | Hi team, my invoice shows the wrong amount Please refund order A-170. 
+T0002 priority=0.67  | my account is locked after login attempts Worst experience, I am angry
+T0003 priority=0.46  | my invoice shows the wrong amount also login to my account This is una
+T0004 priority=0.32  | Hey support, the export job times out with an error Related order: A-7
+
+== 4. intent routing ==
+T0000 -> human_triage           (choice=billing, conf=0.08)
+T0001 -> billing_db_lookup      (choice=billing, conf=0.89)
+T0002 -> identity_reset_flow    (choice=account, conf=0.64)
+T0003 -> identity_reset_flow    (choice=account, conf=0.64)
+
+== 5. break-even thresholds from cost ==
+auto_close_ticket  configured act_at=0.95  break-even=0.95
+assign_queue       configured act_at=0.70  break-even=0.67
+tag_for_analytics  configured act_at=0.40  break-even=0.40
+page_oncall        configured act_at=0.60  break-even=0.60
+offer_refund       configured act_at=0.90  break-even=0.88
